@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+  <defs>
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise"/>
+      <feDiffuseLighting in="noise" lighting-color="#d4a855" surfaceScale="1.5" result="lit">
+        <feDistantLight azimuth="45" elevation="55"/>
+      </feDiffuseLighting>
+      <feComposite in="SourceGraphic" in2="lit" operator="arithmetic" k1="1" k2="0" k3="0" k4="0"/>
+    </filter>
+    <filter id="ink-bleed">
+      <feGaussianBlur stdDeviation="0.4"/>
+    </filter>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;display=swap');
+
+      .parchment-bg { fill: #f5e6c8; }
+      .parchment-border { fill: none; stroke: #8b6914; stroke-width: 3; }
+      .inner-border { fill: none; stroke: #a0782c; stroke-width: 1; stroke-dasharray: 8,4; }
+      .corner-flourish { fill: #8b6914; }
+
+      .title-text {
+        font-family: 'Cinzel Decorative', 'Georgia', serif;
+        font-size: 38px;
+        font-weight: 700;
+        fill: #2c1810;
+        filter: url(#ink-bleed);
+      }
+
+      .subtitle-text {
+        font-family: 'Cinzel', 'Georgia', serif;
+        font-size: 16px;
+        font-weight: 400;
+        fill: #5a3e28;
+      }
+
+      .oath-text {
+        font-family: 'Cinzel', 'Georgia', serif;
+        font-size: 13px;
+        font-weight: 400;
+        fill: #7a5c3a;
+        font-style: italic;
+      }
+
+      .typing-cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .reveal-line {
+        animation: reveal 3s ease-out forwards;
+        opacity: 0;
+      }
+      @keyframes reveal {
+        0% { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .delay-1 { animation-delay: 0.5s; }
+      .delay-2 { animation-delay: 1.2s; }
+      .delay-3 { animation-delay: 2s; }
+      .delay-4 { animation-delay: 2.8s; }
+
+      .footprint {
+        fill: #8b6914;
+        opacity: 0;
+        animation: footstep 6s ease-in-out infinite;
+      }
+      .fp1 { animation-delay: 0s; }
+      .fp2 { animation-delay: 0.8s; }
+      .fp3 { animation-delay: 1.6s; }
+      .fp4 { animation-delay: 2.4s; }
+      @keyframes footstep {
+        0%, 100% { opacity: 0; }
+        15%, 60% { opacity: 0.3; }
+        80% { opacity: 0; }
+      }
+
+      .star {
+        fill: #d4a855;
+        opacity: 0;
+        animation: twinkle 4s ease-in-out infinite;
+      }
+      .s1 { animation-delay: 0s; }
+      .s2 { animation-delay: 1.3s; }
+      .s3 { animation-delay: 2.6s; }
+      .s4 { animation-delay: 0.7s; }
+      .s5 { animation-delay: 2s; }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0; transform: scale(0.5); }
+        50% { opacity: 0.7; transform: scale(1); }
+      }
+    </style>
+  </defs>
+
+  <!-- Parchment background -->
+  <rect class="parchment-bg" x="0" y="0" width="900" height="280" rx="4"/>
+
+  <!-- Aged texture overlay -->
+  <rect x="0" y="0" width="900" height="280" rx="4" fill="#c9a85c" opacity="0.08"/>
+  <rect x="0" y="0" width="900" height="280" rx="4" fill="#8b6914" opacity="0.03"/>
+
+  <!-- Borders -->
+  <rect class="parchment-border" x="8" y="8" width="884" height="264" rx="3"/>
+  <rect class="inner-border" x="18" y="18" width="864" height="244" rx="2"/>
+
+  <!-- Corner flourishes -->
+  <g class="corner-flourish" transform="translate(18,18)">
+    <circle cx="0" cy="0" r="4"/>
+    <line x1="0" y1="4" x2="0" y2="20" stroke="#8b6914" stroke-width="1.5"/>
+    <line x1="4" y1="0" x2="20" y2="0" stroke="#8b6914" stroke-width="1.5"/>
+  </g>
+  <g class="corner-flourish" transform="translate(882,18)">
+    <circle cx="0" cy="0" r="4"/>
+    <line x1="0" y1="4" x2="0" y2="20" stroke="#8b6914" stroke-width="1.5"/>
+    <line x1="-4" y1="0" x2="-20" y2="0" stroke="#8b6914" stroke-width="1.5"/>
+  </g>
+  <g class="corner-flourish" transform="translate(18,262)">
+    <circle cx="0" cy="0" r="4"/>
+    <line x1="0" y1="-4" x2="0" y2="-20" stroke="#8b6914" stroke-width="1.5"/>
+    <line x1="4" y1="0" x2="20" y2="0" stroke="#8b6914" stroke-width="1.5"/>
+  </g>
+  <g class="corner-flourish" transform="translate(882,262)">
+    <circle cx="0" cy="0" r="4"/>
+    <line x1="0" y1="-4" x2="0" y2="-20" stroke="#8b6914" stroke-width="1.5"/>
+    <line x1="-4" y1="0" x2="-20" y2="0" stroke="#8b6914" stroke-width="1.5"/>
+  </g>
+
+  <!-- Decorative stars -->
+  <circle class="star s1" cx="120" cy="50" r="2"/>
+  <circle class="star s2" cx="780" cy="45" r="1.5"/>
+  <circle class="star s3" cx="650" cy="65" r="2"/>
+  <circle class="star s4" cx="250" cy="55" r="1.5"/>
+  <circle class="star s5" cx="500" cy="42" r="1.8"/>
+
+  <!-- Small footprints (Marauder's Map style) -->
+  <g transform="translate(60, 230)">
+    <ellipse class="footprint fp1" cx="0" cy="0" rx="3" ry="5" transform="rotate(-20)"/>
+    <ellipse class="footprint fp2" cx="18" cy="-8" rx="3" ry="5" transform="rotate(-10)"/>
+    <ellipse class="footprint fp3" cx="38" cy="-12" rx="3" ry="5" transform="rotate(-5)"/>
+    <ellipse class="footprint fp4" cx="58" cy="-10" rx="3" ry="5" transform="rotate(5)"/>
+  </g>
+  <g transform="translate(750, 220)">
+    <ellipse class="footprint fp3" cx="0" cy="0" rx="3" ry="5" transform="rotate(15)"/>
+    <ellipse class="footprint fp4" cx="20" cy="6" rx="3" ry="5" transform="rotate(25)"/>
+    <ellipse class="footprint fp1" cx="42" cy="8" rx="3" ry="5" transform="rotate(20)"/>
+  </g>
+
+  <!-- Oath text -->
+  <text class="oath-text reveal-line delay-1" x="450" y="72" text-anchor="middle">
+    "The magic is in the craft..."
+  </text>
+
+  <!-- Title -->
+  <text class="title-text reveal-line delay-2" x="450" y="130" text-anchor="middle">
+    Ronny Granger
+  </text>
+
+  <!-- Subtitle lines -->
+  <text class="subtitle-text reveal-line delay-3" x="450" y="168" text-anchor="middle">
+    Software Engineer · Systems Architect · Kernel Witch
+  </text>
+
+  <!-- Decorative line -->
+  <line class="reveal-line delay-3" x1="280" y1="185" x2="620" y2="185" stroke="#a0782c" stroke-width="0.8" opacity="0.6"/>
+
+  <text class="subtitle-text reveal-line delay-4" x="450" y="210" text-anchor="middle">
+    DevSecOps · Kubernetes · RAG Systems · Linux Kernel
+  </text>
+
+  <!-- Wand decoration -->
+  <g class="reveal-line delay-4" opacity="0.4">
+    <line x1="340" y1="235" x2="560" y2="235" stroke="#8b6914" stroke-width="1"/>
+    <circle cx="340" cy="235" r="2" fill="#8b6914"/>
+    <circle cx="560" cy="235" r="2" fill="#8b6914"/>
+    <circle cx="450" cy="235" r="3" fill="#d4a855"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="80" viewBox="0 0 600 80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&amp;display=swap');
+
+      .mischief-text {
+        font-family: 'Cinzel', 'Georgia', serif;
+        font-size: 16px;
+        fill: #7a5c3a;
+        font-style: italic;
+      }
+
+      .fade-line {
+        stroke: #a0782c;
+        stroke-width: 0.8;
+        opacity: 0.4;
+      }
+
+      .footprint-fade {
+        fill: #8b6914;
+        animation: fade-walk 5s ease-in-out infinite;
+      }
+      .f1 { animation-delay: 0s; }
+      .f2 { animation-delay: 0.6s; }
+      .f3 { animation-delay: 1.2s; }
+      .f4 { animation-delay: 1.8s; }
+      .f5 { animation-delay: 2.4s; }
+      .f6 { animation-delay: 3.0s; }
+
+      @keyframes fade-walk {
+        0% { opacity: 0; }
+        20% { opacity: 0.4; }
+        50% { opacity: 0.3; }
+        80% { opacity: 0.1; }
+        100% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Divider line -->
+  <line class="fade-line" x1="150" y1="10" x2="450" y2="10"/>
+
+  <!-- Text -->
+  <text class="mischief-text" x="300" y="40" text-anchor="middle">
+    ~ Lumos ~
+  </text>
+
+  <!-- Fading footprints walking away -->
+  <g transform="translate(200, 58)">
+    <ellipse class="footprint-fade f1" cx="0" cy="0" rx="2.5" ry="4" transform="rotate(-15)"/>
+    <ellipse class="footprint-fade f2" cx="20" cy="-4" rx="2.5" ry="4" transform="rotate(-5)"/>
+    <ellipse class="footprint-fade f3" cx="42" cy="-2" rx="2.5" ry="4" transform="rotate(5)"/>
+    <ellipse class="footprint-fade f4" cx="64" cy="-5" rx="2.5" ry="4" transform="rotate(-8)"/>
+    <ellipse class="footprint-fade f5" cx="86" cy="-2" rx="2.5" ry="4" transform="rotate(3)"/>
+    <ellipse class="footprint-fade f6" cx="108" cy="-6" rx="2.5" ry="4" transform="rotate(-10)"/>
+  </g>
+</svg>
